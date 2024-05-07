@@ -1,0 +1,45 @@
+<div id="loader-wrapper">
+	<div id="loader"></div>
+	<div class="loader-section section-left"></div>
+	<div class="loader-section section-right"></div>
+</div>
+<div class="flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900">
+	<div class="flex-1 h-full max-w-4xl mx-auto overflow-hidden bg-white rounded-lg shadow-xl dark:bg-gray-800">
+		<div class="flex flex-col overflow-y-auto md:flex-row">
+			<div class="h-32 md:h-auto md:w-1/2">
+				<img aria-hidden="true" class="object-cover w-full h-full dark:hidden" src="/images/setting-light.png"
+					alt="update" />
+				<img aria-hidden="true" class="hidden object-cover w-full h-full dark:block"
+					src="/images/setting-dark.png" alt="update" />
+			</div>
+			<div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
+				<div class="w-full">
+					<h1 class="underline mb-4 text-xl text-center font-semibold text-gray-700 dark:text-gray-200"> &lt;
+						Setting
+						Users &gt; </h1>
+					<form action="/users/settings" method="post" enctype="multipart/form-data">
+						<label class="block mt-4 text-sm">
+							<span class="text-gray-700 dark:text-gray-400">Username:</span>
+							<input name="username"
+								class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+								placeholder="New Costum Username" value="<%= username %>" />
+						</label>
+						<label class="block mt-4 text-sm">
+							<span class="text-gray-700 dark:text-gray-400">Apikey:</span>
+							<input name="apikey"
+								class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+								placeholder="New Costum Apikey" value="<%= apikey %>" />
+						</label>
+						<br class="my-8" />
+						<span class="block text-sm mt-4 text-gray-700 dark:text-gray-400">Profile:</span>
+						<input type="file" name="profile" accept="image/jpg, image/png, image/jpeg"
+							class="block w-full mt-4 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input" />
+						<button
+							class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red"
+							id="submit" type="submit">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

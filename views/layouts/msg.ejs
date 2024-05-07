@@ -1,0 +1,62 @@
+<% if (success_msg !='' ) { %>
+	<script>
+		const Toast = Swal.mixin({
+			toast: true,
+			position: 'center',
+			showConfirmButton: false,
+			timer: 3000,
+			timerProgressBar: true,
+			didOpen: (toast) => {
+				toast.addEventListener('mouseenter', Swal.stopTimer);
+				toast.addEventListener('mouseleave', Swal.resumeTimer);
+			}
+		});
+		Toast.fire({
+			icon: 'success',
+			title: '<%- success_msg %>',
+			footer: "MTX Free API"
+		});
+	</script>
+<% } %>
+
+<% if (warning_msg !='' ) { %>
+	<script>
+		const Toast = Swal.mixin({
+			toast: true,
+			position: 'center',
+			showConfirmButton: false,
+			timer: 3000,
+			timerProgressBar: true,
+			didOpen: (toast) => {
+				toast.addEventListener('mouseenter', Swal.stopTimer);
+				toast.addEventListener('mouseleave', Swal.resumeTimer);
+			}
+		});
+		Toast.fire({
+			icon: 'warning',
+			title: '<%- warning_msg %>',
+			footer: "MTX Free API"
+		});
+	</script>
+<% } %>
+
+<% if (error_msg !='' ) { %>
+	<script>
+		const Toast = Swal.mixin({
+			toast: true,
+			position: 'center',
+			showConfirmButton: false,
+			timer: 3000,
+			timerProgressBar: true,
+			didOpen: (toast) => {
+				toast.addEventListener('mouseenter', Swal.stopTimer);
+				toast.addEventListener('mouseleave', Swal.resumeTimer);
+			}
+		});
+		Toast.fire({
+			icon: 'error',
+			title: '<%- error_msg %>',
+			footer: "MTX Free API"
+		});
+	</script>
+<% } %>
