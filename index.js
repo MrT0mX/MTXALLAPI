@@ -30,9 +30,7 @@ app.use(
   })
 );
 
-connectMongoDb().catch((error) => {
-  console.error("[startup] MongoDB connection failed:", error.name, error.code || "");
-});
+connectMongoDb();
 
 app.enable("trust proxy", 1);
 app.set("json spaces", 2);
@@ -129,13 +127,9 @@ app.use("/api", apirouter);
 app.use("/users", userRouters);
 app.use("/premium", premiumRouters);
 
-if (require.main === module) {
-  app.listen(PORT, function () {
-    console.log("Server running on port " + PORT);
-  });
-}
-
-module.exports = app;
+app.listen(PORT, function () {
+  console.log("Server running on port " + PORT);
+});
 
 cron.schedule(
   "0 0 * * *",
